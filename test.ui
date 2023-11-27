@@ -46,7 +46,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPlainTextEdit" name="plainTextEdit">
+       <widget class="QLineEdit" name="lineEdit">
         <property name="styleSheet">
          <string notr="true">max-height: 40px; border-radius: 10px; background-color: #2d2739; color: white; font-size: 26px;</string>
         </property>

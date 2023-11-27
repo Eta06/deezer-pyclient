@@ -99,10 +99,10 @@ def init():
     image = Image.open("./assets/user_picture.jpg")
     mask = Image.new("L", image.size, 0)
     draw = ImageDraw.Draw(mask)
-    # Resime 10 px yuvarlaklık veriyoruz
+    # Rounded corners
     draw.ellipse((0, 0) + image.size, fill=255)
-    # Maskeyi resimle birleştiriyoruz
     image = ImageOps.fit(image, mask.size, centering=(0.5, 0.5))
+    # Save the image with rounded corners
     image.putalpha(mask)
     image.save("./assets/rounded_user_picture.png")
 
