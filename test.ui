@@ -110,6 +110,9 @@ QMenuBar:hover {
     <property name="title">
      <string>Ayarlar</string>
     </property>
+    <addaction name="actionDil_Tercihleri"/>
+    <addaction name="separator"/>
+    <addaction name="actionOturumu_Kapat"/>
    </widget>
    <widget class="QMenu" name="menuYard_m">
     <property name="styleSheet">
@@ -171,6 +174,16 @@ QMenuBar:hover {
   <action name="actionKaynak_a">
    <property name="text">
     <string>Kaynakça</string>
+   </property>
+  </action>
+  <action name="actionDil_Tercihleri">
+   <property name="text">
+    <string>Dil Tercihleri</string>
+   </property>
+  </action>
+  <action name="actionOturumu_Kapat">
+   <property name="text">
+    <string>Oturumu Kapat</string>
    </property>
   </action>
  </widget>
