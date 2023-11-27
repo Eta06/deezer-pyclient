@@ -28,7 +28,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="upperlayout">
       <item>
        <widget class="QLabel" name="label_2">
         <property name="styleSheet">
@@ -93,6 +93,12 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="contentlayout"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="playerlayout"/>
     </item>
    </layout>
   </widget>
