@@ -1,3 +1,4 @@
+from PIL import Image, ImageDraw, ImageOps
 import requests
 import json
 
@@ -48,10 +49,12 @@ def get_user_info(session_token, user_id):
     headers = {"Authorization": f"Bearer {session_token}"}
 
     response = requests.get(api_url, headers=headers)
-
     if response.status_code == 200:
         user_info = response.json()
-        return user_info
+        name = user_info["name"]
+        picture = user_info["picture"]
+        country = user_info["country"]
+        return name, picture, country
     else:
         print(f"Hata Kodu: {response.status_code}, Hata Mesajı: {response.text}")
         return None
@@ -88,6 +91,20 @@ def init():
     session_token, user_id = authenticate_user(arl_token)
     playlists = get_user_playlists(session_token, user_id)
     username, user_picture, country = get_user_info(session_token, user_id)
+
+    # Download user picture
+    with open("./assets/user_picture.jpg", "wb") as f:
+        f.write(requests.get(user_picture).content)
+
+    image = Image.open("./assets/user_picture.jpg")
+    mask = Image.new("L", image.size, 0)
+    draw = ImageDraw.Draw(mask)
+    # Resime 10 px yuvarlaklık veriyoruz
+    draw.ellipse((0, 0) + image.size, fill=255)
+    # Maskeyi resimle birleştiriyoruz
+    image = ImageOps.fit(image, mask.size, centering=(0.5, 0.5))
+    image.putalpha(mask)
+    image.save("./assets/rounded_user_picture.png")
 
     return {
         "session_token": session_token,

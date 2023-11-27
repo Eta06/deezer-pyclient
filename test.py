@@ -1,4 +1,4 @@
-from PyQt5 import uic
+from PyQt5 import uic, QtWidgets
 from PyQt5.QtGui import QMovie
 from PyQt5.QtWidgets import QApplication
 import deezertools as deezer

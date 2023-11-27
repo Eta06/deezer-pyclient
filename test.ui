@@ -55,7 +55,7 @@
       <item>
        <widget class="QPushButton" name="pushButton">
         <property name="styleSheet">
-         <string notr="true">background-color: #2d2739; border-radius: 10px</string>
+         <string notr="true">background-color: #2d2739; border-radius: 10px; height:40; width:40;</string>
         </property>
         <property name="text">
          <string/>
@@ -63,6 +63,26 @@
         <property name="icon">
          <iconset>
           <normaloff>assets/search_icon_white.png</normaloff>assets/search_icon_white.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: #2d2739; border-radius: 20px; height:40; width:40;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>assets/rounded_user_picture.png</normaloff>assets/rounded_user_picture.png</iconset>
         </property>
         <property name="iconSize">
          <size>
