@@ -20,6 +20,7 @@ def authenticate_user(arl):
     response = requests.post(url, headers=headers, params=params)
 
     if response.status_code == 200:
+        print(response.json())
         session_token = response.json()["results"]["SESSION"]
         user_id = response.json()["results"]["USER_ID"]
         return session_token, user_id
@@ -37,6 +38,20 @@ def get_user_playlists(session_token, user_id):
     if response.status_code == 200:
         playlists = response.json()["data"]
         return playlists
+    else:
+        print(f"Hata Kodu: {response.status_code}, Hata Mesajı: {response.text}")
+        return None
+
+
+def get_user_info(session_token, user_id):
+    api_url = f"https://api.deezer.com/user/{user_id}"
+    headers = {"Authorization": f"Bearer {session_token}"}
+
+    response = requests.get(api_url, headers=headers)
+
+    if response.status_code == 200:
+        user_info = response.json()
+        return user_info
     else:
         print(f"Hata Kodu: {response.status_code}, Hata Mesajı: {response.text}")
         return None
