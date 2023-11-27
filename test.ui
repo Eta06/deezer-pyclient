@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1120</width>
+    <height>610</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PyDeezer by Eta06</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #0f0d13; color: #4b415f; font-size: 16px;</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">max-width: 300; max-height:40px; margin-right:10px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>assets/logo-main.png</pixmap>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPlainTextEdit" name="plainTextEdit">
+        <property name="styleSheet">
+         <string notr="true">max-height: 40px; border-radius: 10px; background-color: #2d2739; color: white; font-size: 26px;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1120</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar{
+	color: white; background-color: #2d2739; border-radius: 10px;  border-top-left-radius: 0;  border-top-right-radius: 0; 
+font: 75 12pt &quot;Trebuchet MS&quot;
+}
+QMenuBar:hover {
+	color: black;
+};</string>
+   </property>
+   <widget class="QMenu" name="menuDosya">
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="title">
+     <string>Dosya</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuKontroller">
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="title">
+     <string>Kontroller</string>
+    </property>
+    <addaction name="action_nceki_Par_a"/>
+    <addaction name="separator"/>
+    <addaction name="actionSonraki_Par_a"/>
+    <addaction name="separator"/>
+    <addaction name="actionDurdur_Ba_lat"/>
+   </widget>
+   <widget class="QMenu" name="menuAyarlar">
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="title">
+     <string>Ayarlar</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuYard_m">
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="title">
+     <string>Yardım</string>
+    </property>
+    <addaction name="actionHata_Raporla"/>
+    <addaction name="action_leti_im"/>
+    <addaction name="separator"/>
+    <addaction name="actionKaynak_a"/>
+   </widget>
+   <widget class="QMenu" name="menuG_r_n_m">
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="title">
+     <string>Görünüm</string>
+    </property>
+    <addaction name="actionTam_Ekran"/>
+   </widget>
+   <addaction name="menuDosya"/>
+   <addaction name="menuG_r_n_m"/>
+   <addaction name="menuKontroller"/>
+   <addaction name="menuAyarlar"/>
+   <addaction name="menuYard_m"/>
+  </widget>
+  <action name="action_nceki_Par_a">
+   <property name="text">
+    <string>Önceki Parça</string>
+   </property>
+  </action>
+  <action name="actionDurdur_Ba_lat">
+   <property name="text">
+    <string>Durdur / Başlat</string>
+   </property>
+  </action>
+  <action name="actionSonraki_Par_a">
+   <property name="text">
+    <string>Sonraki Parça</string>
+   </property>
+  </action>
+  <action name="actionTam_Ekran">
+   <property name="text">
+    <string>Tam Ekran</string>
+   </property>
+  </action>
+  <action name="actionHata_Raporla">
+   <property name="text">
+    <string>Hata Bildir</string>
+   </property>
+  </action>
+  <action name="action_leti_im">
+   <property name="text">
+    <string>İletişim</string>
+   </property>
+  </action>
+  <action name="actionKaynak_a">
+   <property name="text">
+    <string>Kaynakça</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
