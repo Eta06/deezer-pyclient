@@ -136,7 +136,7 @@
       <item>
        <layout class="QVBoxLayout" name="left_menu">
         <item>
-         <widget class="QListView" name="listView">
+         <widget class="QListWidget" name="listWidget">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
             <horstretch>0</horstretch>
