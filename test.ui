@@ -144,7 +144,7 @@
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">padding-left:10px; border: 0;</string>
+           <string notr="true">padding-left:10px; border: 1px solid black; background-color: black; color: white; border-radius: 10px; padding-top:10px;</string>
           </property>
          </widget>
         </item>
