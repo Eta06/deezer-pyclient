@@ -9,15 +9,20 @@ app = QApplication([])
 
 window = uic.loadUi("test.ui")  # Load the PyQt UI file
 
-# Get the upperlayout from the PyQt UI file
-upperLayout = window.upperLayout
+# Print the object names of all the layouts in the window
+for layout in window.findChildren(QtWidgets.QLayout):
+    print(layout.objectName())
 
-# set maximum height for each widget in the layout
-for i in range(upperLayout.count()):
-    widget = upperLayout.itemAt(i).widget()
-    if widget is not None:
-        widget.setMaximumHeight(40)
+upperLayout = window.findChild(QtWidgets.QHBoxLayout, 'horizontal_layout1')
 
+if upperLayout is not None:
+    # Set maximum height for each widget in the layout
+    for i in range(upperLayout.count()):
+        widget = upperLayout.itemAt(i).widget()
+        if widget is not None:
+            widget.setMaximumHeight(40)
+else:
+    print("No layout named 'horizontal_layout1' found")
 
 window.show()
 app.exec_()

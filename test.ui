@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1120</width>
-    <height>610</height>
+    <height>607</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #0f0d13; color: #4b415f; font-size: 16px;</string>
+   <string notr="true">background-color: #0f0d13; color: #4b415f; font-size: 16px; margin:0;</string>
   </property>
   <property name="tabShape">
    <enum>QTabWidget::Rounded</enum>
@@ -27,12 +27,24 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
-     <layout class="QHBoxLayout" name="upperlayout">
+     <layout class="QHBoxLayout" name="horizontal_layout1">
+      <property name="leftMargin">
+       <number>11</number>
+      </property>
       <item>
        <widget class="QLabel" name="label_2">
         <property name="styleSheet">
-         <string notr="true">max-width: 300; max-height:40px; margin-right:10px;</string>
+         <string notr="true">max-width: 300; max-height:40px; margin-right:80px;</string>
         </property>
         <property name="text">
          <string/>
@@ -95,17 +107,146 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="contentlayout"/>
+     <layout class="QHBoxLayout" name="contentlayout">
+      <item>
+       <widget class="QListView" name="listView">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">width: 10%; border: 0; padding-left:10px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0;</string>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>855</width>
+           <height>432</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="playerlayout"/>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="back_button">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">height: 40px; width: 40px; border-radius: 10px; background-color: #300A2B</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>assets/back_button_white.png</normaloff>assets/back_button_white.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="play_button">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">height: 50px; width: 50px; border-radius: 10px; background-color:#300A2B; margin-top:10px; margin-bottom:10px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>assets/play_button_white.png</normaloff>assets/play_button_white.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="next_button">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">height: 40px; width: 40px; border-radius: 10px; background-color:#300A2B;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>assets/next_button_white.png</normaloff>assets/next_button_white.png</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QSlider" name="horizontalSlider">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QStatusBar" name="statusbar">
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

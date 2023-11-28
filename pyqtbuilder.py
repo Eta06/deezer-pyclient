@@ -3,9 +3,9 @@ import os
 
 sg.theme('DarkAmber')
 
-layout = [[sg.Text("PyQt Builder", size=(27, 2), justification='c', font=15)], [sg.Button('Run', size=(30, 1))],
-          [sg.Button("Build As Python File", size=(30, 1))], [sg.Button("Always On Top", size=(30, 1))],
-          [sg.Button('Exit', size=(30, 1))]]
+layout = [[sg.Text("PyQt Builder", size=(27, 2), justification='c', font=15)], [sg.Button('Run', size=(37, 1))],
+          [sg.Button("Build As Python File", size=(37, 1))], [sg.Button("Always On Top", size=(37, 1))],
+          [sg.Button('Exit', size=(37, 1))]]
 
 window = sg.Window('PyQt Builder', layout)
 
