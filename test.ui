@@ -38,7 +38,13 @@
     </property>
     <item>
      <layout class="QHBoxLayout" name="horizontal_layout1">
+      <property name="spacing">
+       <number>7</number>
+      </property>
       <property name="leftMargin">
+       <number>11</number>
+      </property>
+      <property name="rightMargin">
        <number>11</number>
       </property>
       <item>
@@ -60,14 +66,14 @@
       <item>
        <widget class="QLineEdit" name="lineEdit">
         <property name="styleSheet">
-         <string notr="true">max-height: 40px; border-radius: 10px; background-color: #2d2739; color: white; font-size: 26px;</string>
+         <string notr="true">max-height: 40px; border-radius: 10px; background-color: #2d2739; color: white; font-size: 26px; </string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButton">
         <property name="styleSheet">
-         <string notr="true">background-color: #2d2739; border-radius: 10px; height:40; width:40;</string>
+         <string notr="true">background-color: #2d2739; border-radius: 10px; height:40; width:40; border: 1px solid #300A2B;</string>
         </property>
         <property name="text">
          <string/>
@@ -107,24 +113,47 @@
      </layout>
     </item>
     <item>
+     <widget class="Line" name="line">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="midLineWidth">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="contentlayout">
+      <property name="spacing">
+       <number>7</number>
+      </property>
       <item>
-       <widget class="QListView" name="listView">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">width: 10%; border: 0; padding-left:10px;</string>
-        </property>
-       </widget>
+       <layout class="QVBoxLayout" name="left_menu">
+        <item>
+         <widget class="QListView" name="listView">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">padding-left:10px; border: 0;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
        <widget class="QScrollArea" name="scrollArea">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -140,8 +169,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>855</width>
-           <height>432</height>
+           <width>853</width>
+           <height>406</height>
           </rect>
          </property>
         </widget>
@@ -150,11 +179,39 @@
      </layout>
     </item>
     <item>
+     <widget class="Line" name="line_3">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white; margin:0; padding:0;</string>
+      </property>
+      <property name="midLineWidth">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>11</number>
+      </property>
+      <property name="rightMargin">
+       <number>11</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <property name="spacing">
          <number>10</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
         </property>
         <property name="topMargin">
          <number>0</number>
