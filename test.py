@@ -29,7 +29,7 @@ else:
 listWidget = window.findChild(QtWidgets.QListWidget, 'listWidget')
 
 button_names = ["AnaSayfa", "Keşfet", "Kütüphane", "Sevilenler"]
-button_icons = ["./assets/play_button_white.png", ":/assets/play_button_white.png", ":/assets/play_button_white.png", ":/assets/play_button_white.png"]
+button_icons = ["./assets/play_button_white.png", "./assets/play_button_white.png", "./assets/play_button_white.png", "./assets/play_button_white.png"]
 
 # Check if listWidget exists
 if listWidget is not None:

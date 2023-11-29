@@ -80,14 +80,30 @@ def read_arl_token():
     Reads arl token from app_config.json file
     :return: arl token
     """
-    with open("app_config.json", "r", encoding="utf-8") as f:
-        arl_token = json.load(f)["arl_token"]
-    return arl_token
+    try:
+        with open("app_config.json", "r", encoding="utf-8") as f:
+            arl_token = json.load(f)["arl_token"]
+            language = json.load(f)["language"]
+            theme = json.load(f)["theme"]
+    except FileNotFoundError:
+        with open("app_config.json", "w", encoding="utf-8") as f:
+            json.dump({"arl_token": "", "language": "en", "theme": "dark"}, f, indent=4)
+        arl_token = False
+        language = "en"
+        theme = "dark"
+    except:
+        with open("app_config.json", "w", encoding="utf-8") as f:
+            json.dump({"arl_token": "", "language": "en", "theme": "dark"}, f, indent=4)
+        arl_token = False
+        language = "en"
+        theme = "dark"
+    return arl_token, language, theme
 
 
 def init():
-
-    arl_token = read_arl_token()
+    arl_token, language, theme = read_arl_token()
+    if not arl_token:
+        print("arl_token bulunamadı")
     session_token, user_id = authenticate_user(arl_token)
     playlists = get_user_playlists(session_token, user_id)
     username, user_picture, country = get_user_info(session_token, user_id)
@@ -112,5 +128,7 @@ def init():
         "playlists": playlists,
         "username": username,
         "user_picture": user_picture,
-        "country": country
+        "country": country,
+        "language": language,
+        "theme": theme
     }
