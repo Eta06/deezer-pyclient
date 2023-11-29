@@ -82,16 +82,12 @@ def read_arl_token():
     """
     try:
         with open("app_config.json", "r", encoding="utf-8") as f:
-            arl_token = json.load(f)["arl_token"]
-            language = json.load(f)["language"]
-            theme = json.load(f)["theme"]
+            data = json.load(f)
+            print(data)
+            arl_token = data["arl_token"]
+            language = data["language"]
+            theme = data["theme"]
     except FileNotFoundError:
-        with open("app_config.json", "w", encoding="utf-8") as f:
-            json.dump({"arl_token": "", "language": "en", "theme": "dark"}, f, indent=4)
-        arl_token = False
-        language = "en"
-        theme = "dark"
-    except:
         with open("app_config.json", "w", encoding="utf-8") as f:
             json.dump({"arl_token": "", "language": "en", "theme": "dark"}, f, indent=4)
         arl_token = False
@@ -103,7 +99,9 @@ def read_arl_token():
 def init():
     arl_token, language, theme = read_arl_token()
     if not arl_token:
-        print("arl_token bulunamadı")
+        print("arl_token yok")
+        exit()
+
     session_token, user_id = authenticate_user(arl_token)
     playlists = get_user_playlists(session_token, user_id)
     username, user_picture, country = get_user_info(session_token, user_id)
