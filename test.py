@@ -3,6 +3,7 @@ from PyQt5.QtGui import QMovie, QTextOption
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
 import deezertools as deezer
+import ButtonHandler
 
 user = deezer.init()
 print("Starting App With:", user)
@@ -38,7 +39,7 @@ listWidget = window.findChild(QtWidgets.QListWidget, 'listWidget')
 
 button_names = ["Ana sayfa", "Keşfet", "Kütüphane", "Sevilenler"]
 button_icons = ["./assets/" + theme + "/home.png", "./assets/" + theme + "/explore.png",
-                "./assets/" + theme + "/favourites.png", "./assets/" + theme + "/favourites.png"]
+                "./assets/" + theme + "/library2.0.png", "./assets/" + theme + "/favourites.png"]
 
 # Check if listWidget exists
 if listWidget is not None:
@@ -62,8 +63,27 @@ if listWidget is not None:
         button.setIcon(icon)
         # 24,24 is the icon size
         button.setIconSize(QtCore.QSize(24, 24))
+        button.setFixedHeight(50)
         button.setStyleSheet(
-            "text-align:left; padding:0; margin-top: 10px; margin-bottom:10px; font-weight:bold; font-size:20px;")
+            """
+            QPushButton {
+                text-align:left; 
+                padding:0; 
+                font-weight:bold; 
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-bottom: 2px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size:20px;
+            }
+            QPushButton:hover {
+                border: 1px solid #BBBBBB;
+            }
+            QPushButton:pressed {
+                border: 2px solid #BBBBBB;
+            }
+            """)
         button.setFlat(True)
 
         # Set the size of the QListWidgetItem
@@ -93,6 +113,14 @@ if listWidget is not None:
     # Add the Scrollable Area to QListWidget
     scroll_item = QtWidgets.QListWidgetItem(listWidget)
     listWidget.setItemWidget(scroll_item, scrollArea)
+
+    # Kütüphane butonuna tıklandığında ButtonHandler.py dosyasındaki libraryhandler fonksiyonunu çalıştırır
+    library_button = listWidget.itemWidget(listWidget.item(2))
+    print(library_button)
+    library_button.clicked.connect(ButtonHandler.libraryhandler(window))
+
+
+
 else:
     print("No widget named 'listWidget' found")
 
